@@ -9,7 +9,7 @@ var gameOn = true;
 
 do
 {
-Console.WriteLine("Welcome to FizzBuzz!");
+StartupMenu.
 
 int validNumber = Helpers.ValidateInput();
 

@@ -13,7 +13,7 @@ namespace FizzBuzz
         //not null
         //is an integer
 
-        internal static int ValidateInput()
+        internal static int ValidateInputNumber()
         {
             string? result;
             int validNumber;
@@ -27,6 +27,21 @@ namespace FizzBuzz
             } 
             
             return validNumber;
+        }
+
+        internal static string ValidateInputLetter(string input)
+        {
+            string? result = input.ToUpper();
+            string validChar;
+            
+
+            while (string.IsNullOrEmpty(input) || !result.Contains("N") || !result.Contains("Y") || input.Length > 1)
+            {
+                Console.WriteLine("Please enter a valid character");
+                result = Console.ReadLine();
+            }
+
+            return result;
         }
     }
 }
