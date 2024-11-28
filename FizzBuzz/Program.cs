@@ -1,37 +1,24 @@
 ﻿using System.ComponentModel;
+using FizzBuzz;
 
-int n = 50;
+//want to ask user for input
 
-var list = new List<string>();
+//while gameon is true, i want to keep asking for a valid number and running fizzbuzz, and also if the number is invalid, keep asking for a new one
 
 
-for (int i = 1; i <= n; i++)
+var gameOn = true;
+
+do
 {
-    if (i % 3 == 0 && i % 5 == 0)
-    {
-        list.Add("FizzBuzz");
-    }
+Console.WriteLine("Welcome to FizzBuzz!");
+Console.WriteLine("Please enter a whole number: ");
+var inputString = Console.ReadLine();
 
-    else if (i % 3 == 0)
-    {
-        list.Add("Fizz");
-        //Console.WriteLine("Fizz");
-    }
+GameLogic.FizzBuzz(inputString);
 
-    else if (i % 5 == 0)
-    {
-        list.Add("Buzz");
-        //Console.WriteLine("Buzz");
-    }
+    
 
-    else
-    {
-        list.Add(i.ToString());
-        //Console.WriteLine(i.ToString());
-    }
-}
-
-list.ForEach(i => Console.Write(i + " "));
+} while (gameOn);
 
 
 
