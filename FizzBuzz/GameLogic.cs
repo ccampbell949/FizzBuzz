@@ -2,10 +2,9 @@
 
 internal class GameLogic
 {
-    static internal void FizzBuzz(string inputString)
+    static internal void FizzBuzz(int input)
     {
         var list = new List<string>();
-        var input = Convert.ToInt32(inputString);
 
         for (int i = 1; i <= input; i++)
         {
