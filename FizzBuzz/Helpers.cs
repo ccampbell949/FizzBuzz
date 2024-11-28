@@ -17,11 +17,14 @@ namespace FizzBuzz
         {
             string? result;
             int validNumber;
-            do
+            Console.WriteLine("Please enter a whole number");
+            result = Console.ReadLine();
+
+            while (string.IsNullOrEmpty(result) || !Int32.TryParse(result, out validNumber) || validNumber <= 0)
             {
                 Console.WriteLine("Please enter a valid number");
                 result = Console.ReadLine();
-            } while (string.IsNullOrEmpty(result) || !Int32.TryParse(result, out validNumber));
+            } 
             
             return validNumber;
         }

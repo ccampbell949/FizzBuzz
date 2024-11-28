@@ -10,8 +10,6 @@ var gameOn = true;
 do
 {
 Console.WriteLine("Welcome to FizzBuzz!");
-Console.WriteLine("Please enter a whole number: ");
-var inputString = Console.ReadLine();
 
 int validNumber = Helpers.ValidateInput();
 
