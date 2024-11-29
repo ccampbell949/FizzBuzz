@@ -32,13 +32,21 @@ namespace FizzBuzz
         internal static string ValidateInputLetter(string input)
         {
             string? result = input.ToUpper();
-            string validChar;
-            
 
-            while (string.IsNullOrEmpty(input) || !result.Contains("N") || !result.Contains("Y") || input.Length > 1)
+            while (string.IsNullOrEmpty(input) || (result != "N" && result != "Y") || input.Length > 1)
             {
-                Console.WriteLine("Please enter a valid character");
-                result = Console.ReadLine();
+                Console.WriteLine("Please enter a valid character (y/n)");
+                result = Console.ReadLine()?.ToUpper();
+
+                if (string.IsNullOrEmpty(result))
+                {
+                    continue;
+                }
+
+                if (result.Length > 1)
+                {
+                    Console.WriteLine("Please only enter a single character");
+                }
             }
 
             return result;

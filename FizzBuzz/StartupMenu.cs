@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace FizzBuzz
 {
@@ -11,7 +7,9 @@ namespace FizzBuzz
     {
         internal static void Menu()
         {
+            Console.WriteLine("\n-----------------------------------");
             Console.WriteLine("Welcome to FizzBuzz!");
+            Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             Console.Clear();
             Console.WriteLine("Would you like to play a game? Y/N");
@@ -19,8 +17,21 @@ namespace FizzBuzz
 
             var validCharacter = Helpers.ValidateInputLetter(userInput);
 
-
-
-  Switch
+            //if the user selects Y, then continue with program
+            //if user selects n, then close program
+            switch (validCharacter.ToUpper())
+            {
+                case "Y":
+                {
+                    break;
+                }
+                case "N":
+                {
+                    Console.WriteLine("Goodbye!");
+                    Environment.Exit(0);
+                    break;
+                }
+            }
+        }
     }
 }
